@@ -1,0 +1,37 @@
+
+public class kthLargest {
+
+    public static void main(String[] args) {
+    	
+        String c = "0";
+        String s = "3675356291";
+        
+	    int largestProduct2 = 0; 
+	    int largestProduct = 0;
+	    
+	    {
+	    	
+	    for (int i = 0; i < s.length() - 5; i ++) {       //length of 5 digits
+	        int product = 1;
+	            
+	        for (int j = i; j < i + 5; j++) {
+	            product *= Integer.parseInt(s.substring(j, j + 1));        //parses the substring by interger
+	        }
+	        if (product > largestProduct) largestProduct = product;        //largest product is selected
+	    }
+	
+	    for (int i = 0; i < c.length() - 5; i ++) {
+	        int product = 1;
+	        
+	        for (int j = i; j < i + 5; j++) {
+	            product *= Integer.parseInt(c.substring(j, j + 1));
+	        }
+	        if (product > largestProduct2) largestProduct2 = product;
+	    }
+	    
+	}          
+        System.out.println(largestProduct2);
+        System.out.println(largestProduct);        
+    }
+    
+}
